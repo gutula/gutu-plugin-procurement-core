@@ -1,0 +1,9 @@
+{
+  "workflowId": "procurement-order-lifecycle",
+  "actors": [
+    "buyer",
+    "approver",
+    "receiving"
+  ],
+  "description": "Draft, approve, issue, receive, return, and close procurement commitments."
+}

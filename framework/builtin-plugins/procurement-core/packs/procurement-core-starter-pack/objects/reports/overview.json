@@ -1,0 +1,21 @@
+{
+  "pluginId": "procurement-core",
+  "reports": [
+    "Purchase Register",
+    "Supplier Scorecard Summary",
+    "Purchase Order Trends",
+    "Receipt versus Bill Variance"
+  ],
+  "exceptionQueues": [
+    "price-variance-review",
+    "short-receipt-review",
+    "over-receipt-review",
+    "supplier-delay-replan"
+  ],
+  "operationalScenarios": [
+    "requisition-to-rfq",
+    "award-to-purchase-order",
+    "receipt-request-to-bill-suggestion",
+    "subcontract-procurement"
+  ]
+}

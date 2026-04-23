@@ -1,0 +1,11 @@
+{
+  "automationId": "procurement-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "procurement.reconciliation.run",
+  "queues": [
+    "price-variance-review",
+    "short-receipt-review",
+    "over-receipt-review",
+    "supplier-delay-replan"
+  ]
+}

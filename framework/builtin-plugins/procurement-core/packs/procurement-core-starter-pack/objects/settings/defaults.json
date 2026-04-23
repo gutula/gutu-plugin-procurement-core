@@ -1,0 +1,9 @@
+{
+  "workspace": "procurement",
+  "route": "/admin/business/procurement",
+  "pageTitle": "Procurement Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

@@ -1,0 +1,26 @@
+{
+  "packageId": "procurement-core",
+  "packName": "procurement-core-starter-pack",
+  "expectedActions": [
+    "procurement.requisitions.create",
+    "procurement.purchase-orders.issue",
+    "procurement.receipts.request"
+  ],
+  "expectedResources": [
+    "procurement.requisitions",
+    "procurement.purchase-orders",
+    "procurement.receipt-requests"
+  ],
+  "expectedReports": [
+    "Purchase Register",
+    "Supplier Scorecard Summary",
+    "Purchase Order Trends",
+    "Receipt versus Bill Variance"
+  ],
+  "expectedExceptionQueues": [
+    "price-variance-review",
+    "short-receipt-review",
+    "over-receipt-review",
+    "supplier-delay-replan"
+  ]
+}
