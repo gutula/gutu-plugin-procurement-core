@@ -5,6 +5,10 @@
 - `procurement.requisitions.create`: Create Requisition
 - `procurement.purchase-orders.issue`: Issue Purchase Order
 - `procurement.receipts.request`: Request Receipt
+- `procurement.requisitions.hold`: Place Record On Hold
+- `procurement.requisitions.release`: Release Record Hold
+- `procurement.requisitions.amend`: Amend Record
+- `procurement.requisitions.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -70,6 +74,106 @@ Forbidden shortcuts:
 Request Receipt
 
 Permission: `procurement.receipt-requests.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `procurement.requisitions.hold`
+
+Place Record On Hold
+
+Permission: `procurement.requisitions.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `procurement.requisitions.release`
+
+Release Record Hold
+
+Permission: `procurement.requisitions.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `procurement.requisitions.amend`
+
+Amend Record
+
+Permission: `procurement.requisitions.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `procurement.requisitions.reverse`
+
+Reverse Record
+
+Permission: `procurement.requisitions.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 

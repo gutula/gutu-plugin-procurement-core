@@ -26,7 +26,7 @@ Source-to-procure commitments including requisitions, sourcing outcomes, purchas
 
 Owns requisitions, sourcing outcomes, purchase commitments, and receipt expectations while leaving stock and finance truth to their owning plugins.
 
-- Exports 3 governed actions: `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request`.
+- Exports 7 governed actions: `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request`, `procurement.requisitions.hold`, `procurement.requisitions.release`, `procurement.requisitions.amend`, `procurement.requisitions.reverse`.
 - Owns 3 resource contracts: `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request` |
+| Actions | 7 | `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request`, `procurement.requisitions.hold`, `procurement.requisitions.release`, `procurement.requisitions.amend`, `procurement.requisitions.reverse` |
 | Resources | 3 | `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests` |
 | Jobs | 2 | `procurement.projections.refresh`, `procurement.reconciliation.run` |
 | Workflows | 1 | `procurement-order-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/procurement-core";
+import { manifest, createRequisitionAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/procurement-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(createRequisitionAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

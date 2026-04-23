@@ -9,6 +9,10 @@
 | procurement.requisitions.create | Create Requisition |
 | procurement.purchase-orders.issue | Issue Purchase Order |
 | procurement.receipts.request | Request Receipt |
+| procurement.requisitions.hold | Place Record On Hold |
+| procurement.requisitions.release | Release Record Hold |
+| procurement.requisitions.amend | Amend Record |
+| procurement.requisitions.reverse | Reverse Record |
 | procurement.projections.refresh | Job definition queued on `procurement-projections`. |
 | procurement.reconciliation.run | Job definition queued on `procurement-reconciliation`. |
 | procurement-order-lifecycle | Draft, approve, issue, receive, return, and close procurement commitments. |

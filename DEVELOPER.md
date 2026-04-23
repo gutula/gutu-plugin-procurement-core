@@ -71,6 +71,10 @@ Owns requisitions, sourcing outcomes, purchase commitments, and receipt expectat
 | Action | `procurement.requisitions.create` | Permission: `procurement.requisitions.write` | Create Requisition<br>Idempotent<br>Audited |
 | Action | `procurement.purchase-orders.issue` | Permission: `procurement.purchase-orders.write` | Issue Purchase Order<br>Non-idempotent<br>Audited |
 | Action | `procurement.receipts.request` | Permission: `procurement.receipt-requests.write` | Request Receipt<br>Non-idempotent<br>Audited |
+| Action | `procurement.requisitions.hold` | Permission: `procurement.requisitions.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `procurement.requisitions.release` | Permission: `procurement.requisitions.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `procurement.requisitions.amend` | Permission: `procurement.requisitions.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `procurement.requisitions.reverse` | Permission: `procurement.requisitions.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `procurement.requisitions` | Portal disabled | Internal purchase needs and sourcing initiation records.<br>Purpose: Capture demand for external supply without jumping directly to stock or accounting side effects.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `procurement.purchase-orders` | Portal disabled | Commercial commitments issued to suppliers.<br>Purpose: Own the commercial source-to-procure commitment boundary.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `procurement.receipt-requests` | Portal disabled | Expected inbound receipt and receiving request records.<br>Purpose: Request downstream warehouse handling without directly mutating stock truth.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/procurement-core";
+import { manifest, createRequisitionAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/procurement-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  createRequisitionAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/procurement-core";
+import { manifest, createRequisitionAction } from "@plugins/procurement-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", createRequisitionAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request`.
+- Exports 7 governed actions: `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request`, `procurement.requisitions.hold`, `procurement.requisitions.release`, `procurement.requisitions.amend`, `procurement.requisitions.reverse`.
 - Owns 3 resource contracts: `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

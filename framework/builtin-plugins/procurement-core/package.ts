@@ -97,7 +97,11 @@ export default definePackage({
   "publicCommands": [
     "procurement.requisitions.create",
     "procurement.purchase-orders.issue",
-    "procurement.receipts.request"
+    "procurement.receipts.request",
+    "procurement.requisitions.hold",
+    "procurement.requisitions.release",
+    "procurement.requisitions.amend",
+    "procurement.requisitions.reverse"
   ],
   "publicQueries": [
     "procurement.commitment-summary",

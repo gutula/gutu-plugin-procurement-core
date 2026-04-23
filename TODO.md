@@ -4,7 +4,7 @@
 
 ## Shipped Now
 
-- Exports 3 governed actions: `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request`.
+- Exports 7 governed actions: `procurement.requisitions.create`, `procurement.purchase-orders.issue`, `procurement.receipts.request`, `procurement.requisitions.hold`, `procurement.requisitions.release`, `procurement.requisitions.amend`, `procurement.requisitions.reverse`.
 - Owns 3 resource contracts: `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -18,7 +18,7 @@
 
 ## Current Gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No additional gaps were identified beyond the plugin’s stated non-goals.
 
 ## Recommended Next
 

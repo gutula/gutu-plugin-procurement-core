@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "procurement.requisitions.create",
       "procurement.purchase-orders.issue",
-      "procurement.receipts.request"
+      "procurement.receipts.request",
+      "procurement.requisitions.hold",
+      "procurement.requisitions.release",
+      "procurement.requisitions.amend",
+      "procurement.requisitions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -27,7 +31,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "procurement.requisitions.create",
       "procurement.purchase-orders.issue",
-      "procurement.receipts.request"
+      "procurement.receipts.request",
+      "procurement.requisitions.hold",
+      "procurement.requisitions.release",
+      "procurement.requisitions.amend",
+      "procurement.requisitions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -48,7 +56,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "procurement.requisitions.create",
       "procurement.purchase-orders.issue",
-      "procurement.receipts.request"
+      "procurement.receipts.request",
+      "procurement.requisitions.hold",
+      "procurement.requisitions.release",
+      "procurement.requisitions.amend",
+      "procurement.requisitions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -69,7 +81,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "procurement.requisitions.create",
       "procurement.purchase-orders.issue",
-      "procurement.receipts.request"
+      "procurement.receipts.request",
+      "procurement.requisitions.hold",
+      "procurement.requisitions.release",
+      "procurement.requisitions.amend",
+      "procurement.requisitions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
