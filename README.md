@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `procurement-core` |
 | Repo | [gutu-plugin-procurement-core](https://github.com/gutula/gutu-plugin-procurement-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `product-catalog-core`, `pricing-tax-core`, `traceability-core` |
+| Recommended Plugins | `inventory-core`, `accounting-core` |
+| Capability Enhancing | `quality-core`, `manufacturing-core`, `projects-core`, `analytics-bi-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-epc-professional-delivery`, `sector-manufacturing`, `sector-retail`, `sector-trading-distribution` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.procurement`, `events.publish.procurement` |
 | Provided Capabilities | `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `product-catalog-core`, `pricing-tax-core`, `traceability-core`
+- Recommended plugins: `inventory-core`, `accounting-core`
+- Capability-enhancing plugins: `quality-core`, `manufacturing-core`, `projects-core`, `analytics-bi-core`
+- Integration-only plugins: `business-portals-core`
+- Suggested packs: `sector-epc-professional-delivery`, `sector-manufacturing`, `sector-retail`, `sector-trading-distribution`
+- Standalone supported: yes
+- Works without Manufacturing, but operational receiving and bill matching improve significantly once Inventory and Accounting are present.
 
 ## Capability Matrix
 

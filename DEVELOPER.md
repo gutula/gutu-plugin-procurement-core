@@ -54,6 +54,11 @@ Owns requisitions, sourcing outcomes, purchase commitments, and receipt expectat
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `product-catalog-core`, `pricing-tax-core`, `traceability-core` |
+| Recommended Plugins | `inventory-core`, `accounting-core` |
+| Capability Enhancing | `quality-core`, `manufacturing-core`, `projects-core`, `analytics-bi-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-epc-professional-delivery`, `sector-manufacturing`, `sector-retail`, `sector-trading-distribution` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.procurement`, `events.publish.procurement` |
 | Provides Capabilities | `procurement.requisitions`, `procurement.purchase-orders`, `procurement.receipt-requests` |
 | Owns Data | `procurement.requisitions`, `procurement.sourcing-events`, `procurement.purchase-orders`, `procurement.receipt-requests` |

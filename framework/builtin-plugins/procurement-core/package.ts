@@ -72,9 +72,70 @@ export default definePackage({
       "packageId": "traceability-core",
       "class": "required",
       "rationale": "Required for Procurement Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "inventory-core",
+      "class": "optional",
+      "rationale": "Recommended with Procurement Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "accounting-core",
+      "class": "optional",
+      "rationale": "Recommended with Procurement Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "quality-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Procurement Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "manufacturing-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Procurement Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "projects-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Procurement Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Procurement Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "integration-only",
+      "rationale": "Only needed when Procurement Core must exchange data or actions with adjacent or external surfaces."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "inventory-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "quality-core",
+    "manufacturing-core",
+    "projects-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-epc-professional-delivery",
+    "sector-manufacturing",
+    "sector-retail",
+    "sector-trading-distribution"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Works without Manufacturing, but operational receiving and bill matching improve significantly once Inventory and Accounting are present."
+  ],
+  "optionalWith": [
+    "inventory-core",
+    "accounting-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "procurement.requisitions",
